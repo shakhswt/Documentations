@@ -1,59 +1,3 @@
-# 🚀 Heroku'ga Loyihani Yuklash — To'liq Qo'llanma
-
----
-
-## 📋 Talablar (Prerequisites)
-
-- [Heroku akkaunt](https://signup.heroku.com/) — bepul ro'yxatdan o'tish
-- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) o'rnatilgan bo'lishi kerak
-- [Git](https://git-scm.com/) o'rnatilgan bo'lishi kerak
-- Loyiha papkasida `git init` qilingan bo'lishi kerak
-
----
-
-## 1️⃣ Heroku CLI O'rnatish
-
-### Windows:
-```bash
-# Rasmiy saytdan yuklab o'rnating:
-# https://devcenter.heroku.com/articles/heroku-cli
-```
-
-### Ubuntu/Debian:
-```bash
-curl https://cli-assets.heroku.com/install.sh | sh
-```
-
-### Tekshirish:
-```bash
-heroku --version
-```
-
----
-
-## 2️⃣ Heroku'ga Login Bo'lish
-
-```bash
-heroku login
-```
-> Brauzer ochiladi — email va parol bilan kiring.
-
----
-
-## 3️⃣ Loyihani Tayyorlash
-
-### Node.js uchun — `package.json` ichida `start` script bo'lishi shart:
-```json
-{
-  "scripts": {
-    "start": "node index.js"
-  },
-  "engines": {
-    "node": "18.x"
-  }
-}
-```
-
 ### Python (Flask/Django) uchun — `Procfile` yarating:
 ```
 web: gunicorn app:app
@@ -101,9 +45,6 @@ git commit -m "Birinchi commit"
 ## 6️⃣ Heroku App Yaratish
 
 ```bash
-# Yangi app yaratish (nom avtomatik beriladi)
-heroku create
-
 # YOKI o'z nomingizni bering
 heroku create mening-loyiham-nomi
 ```
@@ -182,6 +123,8 @@ git push heroku main
 | `heroku config` | ENV o'zgaruvchilar |
 | `heroku apps` | Barcha applar ro'yxati |
 | `heroku destroy app-nomi` | Appni o'chirish |
+| `heroku ps:scale web=0 --app app_nomi` | Appni pauzalash |
+
 
 ---
 
